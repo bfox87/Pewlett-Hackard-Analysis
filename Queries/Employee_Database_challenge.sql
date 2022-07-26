@@ -46,3 +46,51 @@ ON (e.emp_no = t.emp_no)
 WHERE de.to_date = ('9999-01-01')
 AND (e.birth_date BETWEEN '1965-01-01' AND '1965-12-31') 
 ORDER BY e.emp_no;
+
+-- Deliverable #3 : additional query #1, eligible by dept_no, title
+SELECT DISTINCT ON (e.emp_no) e.emp_no,
+	e.first_name,
+	e.last_name,
+	e.birth_date,
+	de.dept_no,
+	de.from_date,
+	de.to_date,
+	t.title
+INTO mentorship_eligibility_dept
+FROM employees as e
+INNER JOIN dept_employee as de
+ON (e.emp_no = de.emp_no)
+INNER JOIN titles as t
+ON (e.emp_no = t.emp_no)
+WHERE de.to_date = ('9999-01-01')
+AND (e.birth_date BETWEEN '1965-01-01' AND '1965-12-31') 
+ORDER BY e.emp_no;
+
+SELECT COUNT(dept_no), dept_no, title
+FROM mentorship_eligibility_dept
+GROUP BY dept_no, title
+ORDER BY dept_no, title;
+
+-- Deliverable #3 : additional query #2, expanded eligible pool
+SELECT DISTINCT ON (e.emp_no) e.emp_no,
+	e.first_name,
+	e.last_name,
+	e.birth_date,
+	de.dept_no,
+	de.from_date,
+	de.to_date,
+	t.title
+INTO mentorship_eligibility_expanded
+FROM employees as e
+INNER JOIN dept_employee as de
+ON (e.emp_no = de.emp_no)
+INNER JOIN titles as t
+ON (e.emp_no = t.emp_no)
+WHERE de.to_date = ('9999-01-01')
+AND (e.birth_date BETWEEN '1963-01-01' AND '1965-12-31') 
+ORDER BY e.emp_no;
+
+SELECT COUNT(dept_no), dept_no, title
+FROM mentorship_eligibility_expanded
+GROUP BY dept_no, title
+ORDER BY dept_no, title;
