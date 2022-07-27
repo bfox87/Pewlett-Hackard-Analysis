@@ -20,7 +20,7 @@ After some initial work, further analysis is needed to determine the number of r
 - At just 1,549 people, the number of employees eligible to mentor new employees is not large enough. Over 72,000 employees are close to retirement. Although not all their replacements would need mentoring, the retirements are high enough in number that many younger, inexperienced employees will need to be hired. Trying to stretch mentors beyond a couple of mentees is likely to fail. As such, the eligibility standards could be re-evaluated so a wider net can be cast.  
 
 ## Summary:
-- Pewlett Hackard is indeed facing a "silver tsunami" in the near future as some 72,458 roles appear close to retirement and would need to be filled in the near future. Also, based on the results highlighted in point four, there do not appear to be enough qualified employees to mentor the next generation. There are too many new roles to fill.
+Pewlett Hackard is indeed facing a "silver tsunami" in the near future as some 72,458 roles appear close to retirement and would need to be filled in the near future. Also, based on the results highlighted in point four, there do not appear to be enough qualified employees to mentor the next generation. There are too many new roles to fill.
 
 #### Additional Queries for Further Insight:
 To get an idea of where these eligible mentors exist within the company, we can run a query on the count within each department and break that out by role type. Now we can determine how many of each role in each department is eligible to mentor.
